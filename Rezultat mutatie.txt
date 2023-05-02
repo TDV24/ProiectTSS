@@ -1,0 +1,395 @@
+[*] Start mutation process:
+   - targets: functii
+   - tests: test_functii
+Eroare: Mutatie imposibila cu numar
+Eroare: Mutatie imposibila cu numar
+Eroare: Supraincarcare, prea multe animale de ambele parti
+[*] 7 tests passed:
+   - test_functii [0.00103 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR functii:
+--------------------------------------------------------------------------------
+  32:     else:
+  33:         len1 = len(animal1)
+  34:         len2 = len(animal2)
+  35:         for i in range(0, len2):
+- 36:             if animal1[(len1 - 1) - i:len1] == animal2[:i + 1]:
++ 36:             if animal1[(len1 + 1) - i:len1] == animal2[:i + 1]:
+  37:                 return animal1[:(len1 - 1) - i] + animal2
+  38:         return animal1 + animal2
+  39:
+  40:
+--------------------------------------------------------------------------------
+[0.00100 s] killed by test_functional_false (test_functii.Teste)
+   - [#   2] AOR functii:
+--------------------------------------------------------------------------------
+  32:     else:
+  33:         len1 = len(animal1)
+  34:         len2 = len(animal2)
+  35:         for i in range(0, len2):
+- 36:             if animal1[(len1 - 1) - i:len1] == animal2[:i + 1]:
++ 36:             if animal1[(len1 - 1) + i:len1] == animal2[:i + 1]:
+  37:                 return animal1[:(len1 - 1) - i] + animal2
+  38:         return animal1 + animal2
+  39:
+  40:
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_functional_false (test_functii.Teste)
+   - [#   3] AOR functii:
+--------------------------------------------------------------------------------
+  32:     else:
+  33:         len1 = len(animal1)
+  34:         len2 = len(animal2)
+  35:         for i in range(0, len2):
+- 36:             if animal1[(len1 - 1) - i:len1] == animal2[:i + 1]:
++ 36:             if animal1[(len1 - 1) - i:len1] == animal2[:i - 1]:
+  37:                 return animal1[:(len1 - 1) - i] + animal2
+  38:         return animal1 + animal2
+  39:
+  40:
+--------------------------------------------------------------------------------
+[0.00095 s] killed by test_functional_false (test_functii.Teste)
+   - [#   4] AOR functii:
+--------------------------------------------------------------------------------
+  33:         len1 = len(animal1)
+  34:         len2 = len(animal2)
+  35:         for i in range(0, len2):
+  36:             if animal1[(len1 - 1) - i:len1] == animal2[:i + 1]:
+- 37:                 return animal1[:(len1 - 1) - i] + animal2
++ 37:                 return animal1[:(len1 + 1) - i] + animal2
+  38:         return animal1 + animal2
+  39:
+  40:
+  41: '''
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_functional_false (test_functii.Teste)
+   - [#   5] AOR functii:
+--------------------------------------------------------------------------------
+  33:         len1 = len(animal1)
+  34:         len2 = len(animal2)
+  35:         for i in range(0, len2):
+  36:             if animal1[(len1 - 1) - i:len1] == animal2[:i + 1]:
+- 37:                 return animal1[:(len1 - 1) - i] + animal2
++ 37:                 return animal1[:(len1 - 1) + i] + animal2
+  38:         return animal1 + animal2
+  39:
+  40:
+  41: '''
+--------------------------------------------------------------------------------
+[0.00103 s] killed by test_functional_false (test_functii.Teste)
+   - [#   6] AOR functii:
+--------------------------------------------------------------------------------
+  33:         len1 = len(animal1)
+  34:         len2 = len(animal2)
+  35:         for i in range(0, len2):
+  36:             if animal1[(len1 - 1) - i:len1] == animal2[:i + 1]:
+- 37:                 return animal1[:(len1 - 1) - i] + animal2
++ 37:                 return animal1[:(len1 - 1) - i] - animal2
+  38:         return animal1 + animal2
+  39:
+  40:
+  41: '''
+--------------------------------------------------------------------------------
+Eroare: Mutatie imposibila cu numar
+Eroare: Mutatie imposibila cu numar
+Eroare: Supraincarcare, prea multe animale de ambele parti
+[0.00100 s] incompetent
+   - [#   7] AOR functii:
+--------------------------------------------------------------------------------
+  34:         len2 = len(animal2)
+  35:         for i in range(0, len2):
+  36:             if animal1[(len1 - 1) - i:len1] == animal2[:i + 1]:
+  37:                 return animal1[:(len1 - 1) - i] + animal2
+- 38:         return animal1 + animal2
++ 38:         return animal1 - animal2
+  39:
+  40:
+  41: '''
+  42: def media_geometrica_comparatie(a, b, c):
+--------------------------------------------------------------------------------
+Eroare: Mutatie imposibila cu numar
+Eroare: Mutatie imposibila cu numar
+Eroare: Supraincarcare, prea multe animale de ambele parti
+[0.00100 s] incompetent
+   - [#   8] COI functii:
+--------------------------------------------------------------------------------
+  12:
+  13:
+  14:
+  15:
+- 16:     if (type(animal1) == type(5) or type(animal2) == type(5)):
++ 16:     if not ((type(animal1) == type(5) or type(animal2) == type(5))):
+  17:         print('Eroare: Mutatie imposibila cu numar')
+  18:         return False
+  19:     if (type(animal1) == type(['a', 'b']) and type(animal2) == type(['a', 'b'])):
+  20:         print('Eroare: Supraincarcare, prea multe animale de ambele parti')
+--------------------------------------------------------------------------------
+Eroare: Mutatie imposibila cu numar
+Eroare: Mutatie imposibila cu numar
+[0.00168 s] killed by test_functional_true (test_functii.Teste)
+   - [#   9] COI functii:
+--------------------------------------------------------------------------------
+  15:
+  16:     if (type(animal1) == type(5) or type(animal2) == type(5)):
+  17:         print('Eroare: Mutatie imposibila cu numar')
+  18:         return False
+- 19:     if (type(animal1) == type(['a', 'b']) and type(animal2) == type(['a', 'b'])):
++ 19:     if not ((type(animal1) == type(['a', 'b']) and type(animal2) == type(['a', 'b']))):
+  20:         print('Eroare: Supraincarcare, prea multe animale de ambele parti')
+  21:         return False
+  22:     elif type(animal1) == type(['a', 'b']):
+  23:         lista_mutanti = []
+--------------------------------------------------------------------------------
+Eroare: Supraincarcare, prea multe animale de ambele parti
+Eroare: Supraincarcare, prea multe animale de ambele parti
+[0.00102 s] killed by test_functional_true (test_functii.Teste)
+   - [#  10] COI functii:
+--------------------------------------------------------------------------------
+  18:         return False
+  19:     if (type(animal1) == type(['a', 'b']) and type(animal2) == type(['a', 'b'])):
+  20:         print('Eroare: Supraincarcare, prea multe animale de ambele parti')
+  21:         return False
+- 22:     elif type(animal1) == type(['a', 'b']):
++ 22:     elif not (type(animal1) == type(['a', 'b'])):
+  23:         lista_mutanti = []
+  24:         for x in animal1:
+  25:             lista_mutanti.append(mutatie_animale(x, animal2))
+  26:         return lista_mutanti
+--------------------------------------------------------------------------------
+[0.20943 s] killed by test_functional_false (test_functii.Teste)
+   - [#  11] COI functii:
+--------------------------------------------------------------------------------
+  23:         lista_mutanti = []
+  24:         for x in animal1:
+  25:             lista_mutanti.append(mutatie_animale(x, animal2))
+  26:         return lista_mutanti
+- 27:     elif type(animal2) == type(['a', 'b']):
++ 27:     elif not (type(animal2) == type(['a', 'b'])):
+  28:         lista_mutanti = []
+  29:         for x in animal2:
+  30:             lista_mutanti.append(mutatie_animale(animal1, x))
+  31:         return lista_mutanti
+--------------------------------------------------------------------------------
+[0.21144 s] killed by test_functional_false (test_functii.Teste)
+   - [#  12] COI functii:
+--------------------------------------------------------------------------------
+  32:     else:
+  33:         len1 = len(animal1)
+  34:         len2 = len(animal2)
+  35:         for i in range(0, len2):
+- 36:             if animal1[(len1 - 1) - i:len1] == animal2[:i + 1]:
++ 36:             if not (animal1[(len1 - 1) - i:len1] == animal2[:i + 1]):
+  37:                 return animal1[:(len1 - 1) - i] + animal2
+  38:         return animal1 + animal2
+  39:
+  40:
+--------------------------------------------------------------------------------
+[0.00100 s] killed by test_functional_true (test_functii.Teste)
+   - [#  13] LCR functii:
+--------------------------------------------------------------------------------
+  12:
+  13:
+  14:
+  15:
+- 16:     if (type(animal1) == type(5) or type(animal2) == type(5)):
++ 16:     if (type(animal1) == type(5) and type(animal2) == type(5)):
+  17:         print('Eroare: Mutatie imposibila cu numar')
+  18:         return False
+  19:     if (type(animal1) == type(['a', 'b']) and type(animal2) == type(['a', 'b'])):
+  20:         print('Eroare: Supraincarcare, prea multe animale de ambele parti')
+--------------------------------------------------------------------------------
+Eroare: Supraincarcare, prea multe animale de ambele parti
+[0.00000 s] incompetent
+   - [#  14] LCR functii:
+--------------------------------------------------------------------------------
+  15:
+  16:     if (type(animal1) == type(5) or type(animal2) == type(5)):
+  17:         print('Eroare: Mutatie imposibila cu numar')
+  18:         return False
+- 19:     if (type(animal1) == type(['a', 'b']) and type(animal2) == type(['a', 'b'])):
++ 19:     if (type(animal1) == type(['a', 'b']) or type(animal2) == type(['a', 'b'])):
+  20:         print('Eroare: Supraincarcare, prea multe animale de ambele parti')
+  21:         return False
+  22:     elif type(animal1) == type(['a', 'b']):
+  23:         lista_mutanti = []
+--------------------------------------------------------------------------------
+Eroare: Mutatie imposibila cu numar
+Eroare: Mutatie imposibila cu numar
+Eroare: Supraincarcare, prea multe animale de ambele parti
+Eroare: Supraincarcare, prea multe animale de ambele parti
+[0.00134 s] killed by test_list_data_type_for_left (test_functii.Teste)
+   - [#  15] ROR functii:
+--------------------------------------------------------------------------------
+  12:
+  13:
+  14:
+  15:
+- 16:     if (type(animal1) == type(5) or type(animal2) == type(5)):
++ 16:     if (type(animal1) != type(5) or type(animal2) == type(5)):
+  17:         print('Eroare: Mutatie imposibila cu numar')
+  18:         return False
+  19:     if (type(animal1) == type(['a', 'b']) and type(animal2) == type(['a', 'b'])):
+  20:         print('Eroare: Supraincarcare, prea multe animale de ambele parti')
+--------------------------------------------------------------------------------
+Eroare: Mutatie imposibila cu numar
+Eroare: Mutatie imposibila cu numar
+[0.00399 s] killed by test_functional_true (test_functii.Teste)
+   - [#  16] ROR functii:
+--------------------------------------------------------------------------------
+  12:
+  13:
+  14:
+  15:
+- 16:     if (type(animal1) == type(5) or type(animal2) == type(5)):
++ 16:     if (type(animal1) == type(5) or type(animal2) != type(5)):
+  17:         print('Eroare: Mutatie imposibila cu numar')
+  18:         return False
+  19:     if (type(animal1) == type(['a', 'b']) and type(animal2) == type(['a', 'b'])):
+  20:         print('Eroare: Supraincarcare, prea multe animale de ambele parti')
+--------------------------------------------------------------------------------
+Eroare: Mutatie imposibila cu numar
+Eroare: Mutatie imposibila cu numar
+[0.00100 s] killed by test_functional_true (test_functii.Teste)
+   - [#  17] ROR functii:
+--------------------------------------------------------------------------------
+  15:
+  16:     if (type(animal1) == type(5) or type(animal2) == type(5)):
+  17:         print('Eroare: Mutatie imposibila cu numar')
+  18:         return False
+- 19:     if (type(animal1) == type(['a', 'b']) and type(animal2) == type(['a', 'b'])):
++ 19:     if (type(animal1) != type(['a', 'b']) and type(animal2) == type(['a', 'b'])):
+  20:         print('Eroare: Supraincarcare, prea multe animale de ambele parti')
+  21:         return False
+  22:     elif type(animal1) == type(['a', 'b']):
+  23:         lista_mutanti = []
+--------------------------------------------------------------------------------
+Eroare: Mutatie imposibila cu numar
+Eroare: Mutatie imposibila cu numar
+Eroare: Supraincarcare, prea multe animale de ambele parti
+Eroare: Supraincarcare, prea multe animale de ambele parti
+Eroare: Supraincarcare, prea multe animale de ambele parti
+[0.00199 s] survived
+   - [#  18] ROR functii:
+--------------------------------------------------------------------------------
+  15:
+  16:     if (type(animal1) == type(5) or type(animal2) == type(5)):
+  17:         print('Eroare: Mutatie imposibila cu numar')
+  18:         return False
+- 19:     if (type(animal1) == type(['a', 'b']) and type(animal2) == type(['a', 'b'])):
++ 19:     if (type(animal1) == type(['a', 'b']) and type(animal2) != type(['a', 'b'])):
+  20:         print('Eroare: Supraincarcare, prea multe animale de ambele parti')
+  21:         return False
+  22:     elif type(animal1) == type(['a', 'b']):
+  23:         lista_mutanti = []
+--------------------------------------------------------------------------------
+Eroare: Mutatie imposibila cu numar
+Eroare: Mutatie imposibila cu numar
+Eroare: Supraincarcare, prea multe animale de ambele parti
+[0.00211 s] killed by test_list_data_type_for_left (test_functii.Teste)
+   - [#  19] ROR functii:
+--------------------------------------------------------------------------------
+  18:         return False
+  19:     if (type(animal1) == type(['a', 'b']) and type(animal2) == type(['a', 'b'])):
+  20:         print('Eroare: Supraincarcare, prea multe animale de ambele parti')
+  21:         return False
+- 22:     elif type(animal1) == type(['a', 'b']):
++ 22:     elif type(animal1) != type(['a', 'b']):
+  23:         lista_mutanti = []
+  24:         for x in animal1:
+  25:             lista_mutanti.append(mutatie_animale(x, animal2))
+  26:         return lista_mutanti
+--------------------------------------------------------------------------------
+[0.21140 s] killed by test_functional_false (test_functii.Teste)
+   - [#  20] ROR functii:
+--------------------------------------------------------------------------------
+  23:         lista_mutanti = []
+  24:         for x in animal1:
+  25:             lista_mutanti.append(mutatie_animale(x, animal2))
+  26:         return lista_mutanti
+- 27:     elif type(animal2) == type(['a', 'b']):
++ 27:     elif type(animal2) != type(['a', 'b']):
+  28:         lista_mutanti = []
+  29:         for x in animal2:
+  30:             lista_mutanti.append(mutatie_animale(animal1, x))
+  31:         return lista_mutanti
+--------------------------------------------------------------------------------
+[0.21343 s] killed by test_functional_false (test_functii.Teste)
+   - [#  21] ROR functii:
+--------------------------------------------------------------------------------
+  32:     else:
+  33:         len1 = len(animal1)
+  34:         len2 = len(animal2)
+  35:         for i in range(0, len2):
+- 36:             if animal1[(len1 - 1) - i:len1] == animal2[:i + 1]:
++ 36:             if animal1[(len1 - 1) - i:len1] != animal2[:i + 1]:
+  37:                 return animal1[:(len1 - 1) - i] + animal2
+  38:         return animal1 + animal2
+  39:
+  40:
+--------------------------------------------------------------------------------
+[0.00115 s] killed by test_functional_true (test_functii.Teste)
+   - [#  22] SIR functii:
+--------------------------------------------------------------------------------
+  32:     else:
+  33:         len1 = len(animal1)
+  34:         len2 = len(animal2)
+  35:         for i in range(0, len2):
+- 36:             if animal1[(len1 - 1) - i:len1] == animal2[:i + 1]:
++ 36:             if animal1[:len1] == animal2[:i + 1]:
+  37:                 return animal1[:(len1 - 1) - i] + animal2
+  38:         return animal1 + animal2
+  39:
+  40:
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_functional_false (test_functii.Teste)
+   - [#  23] SIR functii:
+--------------------------------------------------------------------------------
+  32:     else:
+  33:         len1 = len(animal1)
+  34:         len2 = len(animal2)
+  35:         for i in range(0, len2):
+- 36:             if animal1[(len1 - 1) - i:len1] == animal2[:i + 1]:
++ 36:             if animal1[(len1 - 1) - i:] == animal2[:i + 1]:
+  37:                 return animal1[:(len1 - 1) - i] + animal2
+  38:         return animal1 + animal2
+  39:
+  40:
+--------------------------------------------------------------------------------
+Eroare: Mutatie imposibila cu numar
+Eroare: Mutatie imposibila cu numar
+Eroare: Supraincarcare, prea multe animale de ambele parti
+[0.00199 s] survived
+   - [#  24] SIR functii:
+--------------------------------------------------------------------------------
+  32:     else:
+  33:         len1 = len(animal1)
+  34:         len2 = len(animal2)
+  35:         for i in range(0, len2):
+- 36:             if animal1[(len1 - 1) - i:len1] == animal2[:i + 1]:
++ 36:             if animal1[(len1 - 1) - i:len1] == animal2[:]:
+  37:                 return animal1[:(len1 - 1) - i] + animal2
+  38:         return animal1 + animal2
+  39:
+  40:
+--------------------------------------------------------------------------------
+[0.00021 s] killed by test_functional_false (test_functii.Teste)
+   - [#  25] SIR functii:
+--------------------------------------------------------------------------------
+  33:         len1 = len(animal1)
+  34:         len2 = len(animal2)
+  35:         for i in range(0, len2):
+  36:             if animal1[(len1 - 1) - i:len1] == animal2[:i + 1]:
+- 37:                 return animal1[:(len1 - 1) - i] + animal2
++ 37:                 return animal1[:] + animal2
+  38:         return animal1 + animal2
+  39:
+  40:
+  41: '''
+--------------------------------------------------------------------------------
+[0.00100 s] killed by test_functional_false (test_functii.Teste)
+[*] Mutation score [1.36618 s]: 90.9%
+   - all: 25
+   - killed: 20 (80.0%)
+   - survived: 2 (8.0%)
+   - incompetent: 3 (12.0%)
+   - timeout: 0 (0.0%)
