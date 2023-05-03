@@ -18,4 +18,4 @@ class Teste(unittest.TestCase):
     def test_list_data_type_for_left(self):
         self.assertEqual(type(mutatie_animale(["elefant", "capra", 8], "rata")), type(["cuvant", "litera"]))
     def test_list_data_type_for_right(self):
-        self.assertNotEqual(mutatie_animale("papagal", ["albatros", "albina", 3]), [])
+        self.assertEqual(mutatie_animale("papagal", ["albatros", "albina", 3]), ["papagalbatros", "papagalbina", False])

@@ -33,7 +33,7 @@ def mutatie_animale(animal1, animal2):
         len1 = len(animal1)
         len2 = len(animal2)
         for i in range(0, len2):
-            if animal1[len1 - 1 - i:len1] == animal2[:i + 1]:
+            if animal1[len1 - 1 - i:] == animal2[:i + 1]:
                 return animal1[:len1 - 1 - i] + animal2
         return animal1 + animal2
     # 2 functionala, 3 structurala, 1 distingerea unui mutant ramas in viata
