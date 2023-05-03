@@ -37,6 +37,21 @@ def mutatie_animale(animal1, animal2):
                 return animal1[:len1 - 1 - i] + animal2
         return animal1 + animal2
     # 2 functionala, 3 structurala, 1 distingerea unui mutant ramas in viata
+    # coverage erase ; coverage run --branch foo.py ; coverage html -i
+
+"""
+Aici sunt testele din test_functii pentru a vedea daca se acopera toate ramurile
+coverage erase ; coverage run --branch foo.py ; coverage html -i
+se comenteaza aici testele daca vrem sa rulam mutantii
+"""
+mutatie_animale("elefant", "antilopa")
+mutatie_animale("capra", "rata")
+mutatie_animale(7, "pisica")
+mutatie_animale("caine", 7)
+mutatie_animale(["elefant", "capra", 6], ["rata"])
+mutatie_animale(["elefant", "capra", 8], "rata")
+mutatie_animale("papagal", ["albatros", "albina", 3])
+
 
 """
 def media_geometrica_comparatie(a, b, c):
